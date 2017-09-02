@@ -16,8 +16,6 @@ type Config struct {
 }
 
 func usage(){
-	
-	flag.Lookup("stderrthreshold").Value.Set("INFO")
 	fmt.Fprintf(os.Stderr, "usage: example -stderrthreshold=[INFO|WARN|FATAL] -log_dir=[string]\n", )
 	flag.PrintDefaults()
 	os.Exit(2)
@@ -26,6 +24,9 @@ func usage(){
 func init(){
 	flag.Usage = usage
 	flag.Parse()
+	//fmt.Println(flag.Lookup("stderrthreshold").Value)
+	flag.Set("stderrthreshold", "INFO")
+	//fmt.Println(flag.Lookup("stderrthreshold").Value)
 }
 
 func main() {
