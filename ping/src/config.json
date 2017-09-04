@@ -1,0 +1,6 @@
+[
+    {
+    "endpoints": ["trevorjackson.ca:80", "www.google.ca:80"],
+    "checkInterval": 6000000000
+    }
+]
